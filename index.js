@@ -100,7 +100,7 @@ app.post('/generate', async (req, res) => {
     const timestamp = new Date().toISOString().replace(/[:.]/g, '-'); 
     const filePath = `./qrcodeimages/${timestamp}.png`;
 
-    await qrcode.toFile(filePath, `localhost:8080/ticket/${uuid}`);
+    await qrcode.toFile(filePath, `https://webprojekt1-slh6.onrender.com/ticket/${uuid}`);
 
     res.sendFile(filePath, { root: __dirname });
 
