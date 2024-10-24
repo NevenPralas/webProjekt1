@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code Generator</title>
+    <link rel="stylesheet" href="/style.css">
+    
+    <script>
+        // Funkcija koja šalje AJAX zahtjev za dohvaćanje broja tiketa
+        async function fetchTicketCount() {
+            try {
+                const response = await fetch('/ticket-count');
+                const data = await response.json();
+                document.getElementById('ticket-counter').innerText = data.ticketCounter;
+            } catch (error) {
+                console.error('Greška prilikom dohvaćanja broja ticketa:', error);
+                document.getElementById('ticket-counter').innerText = 'Greška';
+            }
+        }
+
+        window.onload = function() {
+            fetchTicketCount();
+        };
+    </script>
+</head>
+<body>
+
+    <% if (token != undefined) { %>
+        <a href="/logout">Log Out</a>
+        <% } else {%>
+        <a href="/login">Log In</a>
+            <% }%>
+
+    <header class="header1">
+        <h1 class="naslov1">QR Code Generator</h1>
+
+        <nav class="nav-container">
+            <div class="nav-links">
+                <a href="/" class="nav-item" id="home">Home</a>
+                <a href="/generate" class="nav-item" id="generate">Generate!</a>
+                <a href="/about" class="nav-item" id="about">About</a>
+            </div>
+        </nav>
+    </header>
+
+    <div class="div1">
+        <p class="brojac1">Broj generiranih ulaznica:</p>
+        <p class="brojac2" id="ticket-counter"><%= ticketCounter %></p> <!-- Dinamički dio -->
+    </div>
+
+
+</body>
+</html>

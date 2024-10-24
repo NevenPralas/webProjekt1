@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+    <% if (token != undefined) { %>
+        <a href="/logout">Log Out</a>
+        <% } else {%>
+        <a href="/login">Log In</a>
+            <% }%>
+
+    <header class="header1">
+        <h1 class="naslov1">QR Code Generator</h1>
+
+        <nav class="nav-container">
+            <div class="nav-links">
+              <a href="/" class="nav-item" id="home">Home</a>
+              <a href="/generate" class="nav-item" id="generate">Generate!</a>
+              <a href="/about" class="nav-item" id="about">About</a>
+            </div>
+        </nav>
+    </header>
+
+    <div class="div1">
+        <p class="brojac1">QR Code Generator...</p>
+        <p class="brojac3">...je web-aplikacija koja služi za generiranje QR kodova za određenu
+            namjenu. Dugme 'Home' će Vas odvesti na početnu stranicu.
+            Dugme 'Generate' će vam omogućiti generiranje QR kodova. Dugme 'About'
+            će vas odvesti na ovu trenutnu stranicu.
+        </p>
+    </div>
+    
+</body>
+</html>

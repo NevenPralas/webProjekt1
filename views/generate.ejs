@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generate</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+    <% if (token != undefined) { %>
+        <a href="/logout">Log Out</a>
+        <% } else {%>
+        <a href="/login">Log In</a>
+            <% }%>
+
+    <header class="header1">
+        <h1 class="naslov1">QR Code Generator</h1>
+
+        <nav class="nav-container">
+            <div class="nav-links">
+              <a href="/" class="nav-item" id="home">Home</a>
+              <a href="/generate" class="nav-item" id="generate">Generate!</a>
+              <a href="/about" class="nav-item" id="about">About</a>
+            </div>
+        </nav>
+    </header>
+
+    <div class="div2">
+        
+        <form class="form1" method="POST">
+            <label for="oib">OIB:</label>
+            <input type="text" id="oib" name="oib">
+        
+
+            <label for="ime">Ime:</label>
+            <input type="text" id="ime" name="ime">
+      
+            <label for="prezime">Prezime:</label>
+            <input type="text" id="prezime" name="prezime">
+
+            <button type="submit" class="dugme1">Potvrdi</button>
+        </form>
+    </div>
+    
+</body>
+</html>
